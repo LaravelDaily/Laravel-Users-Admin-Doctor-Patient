@@ -19,6 +19,19 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->string('doctor_licence_no')->nullable();
+            $table->date('doctor_licence_start_date')->nullable();
+            $table->date('doctor_licence_end_date')->nullable();
+            $table->string('doctor_specialty')->nullable();
+
+            $table->date('patent_birth_date')->nullable();
+            $table->string('patient_address')->nullable();
+            $table->string('patient_phone_no')->nullable();
+            $table->string('patient_gender')->nullable();
+            $table->integer('patient_personal_code')->nullable();
+            $table->string('patient_social_number')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

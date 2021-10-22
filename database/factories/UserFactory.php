@@ -44,4 +44,34 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    public function doctor()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'role_id' => User::ROLE_DOCTOR,
+                'doctor_licence_no' => $this->faker->bothify('???-######'),
+                'doctor_licence_start_date' => $this->faker->dateTimeBetween('-15 years', '-3 years'),
+                'doctor_licence_end_date' => null,
+                'doctor_specialty' => '',
+            ];
+        });
+    }
+
+    public function patient()
+    {
+        return $this->state(function (array $attributes) {
+            $genres = ['male', 'female'];
+
+            return [
+                'role_id' => User::ROLE_PATIENT,
+                'patent_birth_date' => $this->faker->date(),
+                'patient_address' => $this->faker->address(),
+                'patient_phone_no' => $this->faker->phoneNumber(),
+                'patient_gender' => $genres[mt_rand(0,count($genres)-1)],
+                'patient_personal_code' => $this->faker->randomNumber(9),
+                'patient_social_number' => $this->faker->randomNumber(6).'-'.$this->faker->randomNumber(6),
+            ];
+        });
+    }
 }

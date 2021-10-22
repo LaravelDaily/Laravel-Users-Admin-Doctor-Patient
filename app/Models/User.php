@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
     ];
 
     /**
@@ -40,5 +41,12 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'patent_birth_date' => 'custom_datetime:Y-m-d',
+        'doctor_licence_start_date' => 'custom_datetime:Y-m-d',
+        'doctor_licence_end_date' => 'date',
     ];
+
+    CONST ROLE_ADMIN = 1;
+    CONST ROLE_DOCTOR = 2;
+    CONST ROLE_PATIENT = 3;
 }

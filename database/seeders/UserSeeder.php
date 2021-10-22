@@ -15,8 +15,11 @@ class UserSeeder extends Seeder
             'email' => 'test@test.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
+            'role_id' => User::ROLE_ADMIN,
         ]);
 
-        User::factory(10)->create();
+        User::factory(100)->doctor()->create();
+
+        User::factory(1000)->patient()->create();
     }
 }

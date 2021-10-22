@@ -12,8 +12,14 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
-                        {{ __('Users') }}
+                    <x-nav-link :href="route('doctors')" :active="request()->routeIs('doctors')">
+                        {{ __('Doctors') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('patients')" :active="request()->routeIs('patients')">
+                        {{ __('Patients') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('appointments')" :active="request()->routeIs('appointments')">
+                        {{ __('Appointments') }}
                     </x-nav-link>
                 </div>
             </div>
