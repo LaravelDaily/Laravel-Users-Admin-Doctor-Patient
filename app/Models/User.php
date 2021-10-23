@@ -43,7 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'patent_birth_date' => 'custom_datetime:Y-m-d',
         'doctor_licence_start_date' => 'custom_datetime:Y-m-d',
-        'doctor_licence_end_date' => 'date',
+        'doctor_licence_end_date' => 'custom_datetime:Y-m-d',
     ];
 
     CONST ROLE_ADMIN = 1;

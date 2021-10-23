@@ -21,7 +21,10 @@
                                     <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Birth date</span>
                                 </th>
                                 <th class="px-6 py-3 bg-gray-50">
-                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Address</span>
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Declared address</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Home address</span>
                                 </th>
                                 <th class="px-6 py-3 bg-gray-50">
                                     <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Phone no</span>
@@ -34,6 +37,15 @@
                                 </th>
                                 <th class="px-6 py-3 bg-gray-50">
                                     <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Social number</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Last visit time</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Last visit reason</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Description</span>
                                 </th>
                             </tr>
                             </thead>
@@ -48,7 +60,10 @@
                                         {{ $patient->patent_birth_date }}
                                     </td>
                                     <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
-                                        {{ $patient->patient_address }}
+                                        {{ $patient->patient_declared_address }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ $patient->patient_home_address }}
                                     </td>
                                     <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                         {{ $patient->patient_phone_no }}
@@ -61,6 +76,15 @@
                                     </td>
                                     <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                         {{ $patient->patient_social_number }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ $patient->patient_last_visit_time }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ $patient->patient_last_visit_reason }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ Str::words($patient->patient_description, 3) }}
                                     </td>
                                 </tr>
                             @endforeach

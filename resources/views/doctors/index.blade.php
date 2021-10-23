@@ -24,7 +24,22 @@
                                     <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Licence date</span>
                                 </th>
                                 <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Stamp no</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Hospital name</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Department</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
                                     <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Specialty</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Work hours</span>
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50">
+                                    <span class="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Biography</span>
                                 </th>
                             </tr>
                             </thead>
@@ -42,7 +57,22 @@
                                         {{ $doctor->doctor_licence_start_date }} - {{ $doctor->doctor_licence_end_date ?? 'valid'  }}
                                     </td>
                                     <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
-                                        {{ $doctor->specialty }}
+                                        {{ $doctor->doctor_stamp_number }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ $doctor->doctor_hospital_name }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ $doctor->doctor_department }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ $doctor->doctor_specialty }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ $doctor->doctor_work_days }} {{ $doctor->doctor_work_hours }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ Str::words($doctor->doctor_biography, 3) }}
                                     </td>
                                 </tr>
                             @endforeach

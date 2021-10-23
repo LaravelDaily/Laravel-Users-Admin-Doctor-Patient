@@ -9,7 +9,7 @@ class AppointmentsController extends Controller
 {
     public function __invoke()
     {
-        $appointments = Appointment::with('doctor', 'patient')->paginate();
+        $appointments = Appointment::with('doctor', 'patient')->paginate(100);
 
         return view('appointments.index', compact('appointments'));
     }

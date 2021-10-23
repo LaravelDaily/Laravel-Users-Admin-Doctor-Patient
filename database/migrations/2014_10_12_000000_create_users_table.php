@@ -23,14 +23,24 @@ class CreateUsersTable extends Migration
             $table->string('doctor_licence_no')->nullable();
             $table->date('doctor_licence_start_date')->nullable();
             $table->date('doctor_licence_end_date')->nullable();
+            $table->integer('doctor_stamp_number')->nullable();
+            $table->string('doctor_hospital_name')->nullable();
+            $table->string('doctor_department')->nullable();
             $table->string('doctor_specialty')->nullable();
+            $table->text('doctor_biography')->nullable();
+            $table->string('doctor_work_days')->nullable();
+            $table->string('doctor_work_hours')->nullable();
 
             $table->date('patent_birth_date')->nullable();
-            $table->string('patient_address')->nullable();
+            $table->string('patient_declared_address')->nullable();
+            $table->string('patient_home_address')->nullable();
             $table->string('patient_phone_no')->nullable();
             $table->string('patient_gender')->nullable();
             $table->integer('patient_personal_code')->nullable();
             $table->string('patient_social_number')->nullable();
+            $table->dateTime('patient_last_visit_time')->nullable();
+            $table->string('patient_last_visit_reason')->nullable();
+            $table->text('patient_description')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

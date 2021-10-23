@@ -8,7 +8,7 @@ class PatientsController extends Controller
 {
     public function __invoke()
     {
-        $patients = User::where('role_id', User::ROLE_PATIENT)->paginate();
+        $patients = User::where('role_id', User::ROLE_PATIENT)->paginate(100);
 
         return view('patients.index', compact('patients'));
     }
