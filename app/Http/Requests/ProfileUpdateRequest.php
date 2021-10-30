@@ -17,6 +17,19 @@ class ProfileUpdateRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return array
+     * can create custom message in stead of the the build in message
+     */
+    public function message()
+    {
+        return [
+            'name.required' => "Name is required and cannot be more than 255 character",
+            'emai.required' =>"Email is required and should be unique",
+
+        ];
+    }
+
     public function authorize()
     {
         return true;
